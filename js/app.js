@@ -63,6 +63,7 @@ operators.forEach(operator => {
             operatorSign = operator.value;
         }
         operatorClick = true;
+        totalCalculated = false;
     })
 })
 
