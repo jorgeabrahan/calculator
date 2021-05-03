@@ -15,7 +15,6 @@ main {
 
 .calculator {
     font-size: 1.3em;
-    border: 1px solid black;
 }
 
 .calculator__result {
@@ -61,9 +60,6 @@ input[type="text"]::placeholder {
 }
 
 @media (max-width: 600px) {
-    main {
-        background-image: url(../svg/Abstract\ Paper.svg);
-    }
     .calculator {
         width: 100%;
         min-height: 40vh;

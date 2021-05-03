@@ -21,18 +21,23 @@ let operatorClick = false;
 /* Añade un evento a cada numero y ejecuta una funcion */
 numbers.forEach(number => {
     number.addEventListener('click', () => {
-        /* Si aun no se ha dado click en ningun operador */
-        if (operatorSign == '') {
-            /* El input que muestra el resultado ira concatenando los numeros introducidos */
-            result.value += number.value;
-            /* La variable firstNumber guarda ese numero hasta que se da click en un operador */
-            firstNumber = result.value;
-        } else {
-            if (operatorClick == true) {
-                result.value = '';
-                operatorClick = false;
+        if(totalCalculated == false) {
+            /* Si aun no se ha dado click en ningun operador */
+            if (operatorSign == '') {
+                /* El input que muestra el resultado ira concatenando los numeros introducidos */
+                result.value += number.value;
+                /* La variable firstNumber guarda ese numero hasta que se da click en un operador */
+                firstNumber = result.value;
+            } else {
+                if (operatorClick == true) {
+                    result.value = '';
+                    operatorClick = false;
+                }
+                result.value += number.value;
             }
-            result.value += number.value;
+        } else {
+            totalCalculated = false;
+            result.value = number.value;
         }
 
         /* Si el primer numero añadido es 0 */
@@ -48,14 +53,12 @@ numbers.forEach(number => {
 
 /* Almacena el simbolo del operador */
 let operatorSign = '';
-let operateByOperator = false;
 /* Añade un evento a cada operador y ejecuta una funcion */
 operators.forEach(operator => {
     operator.addEventListener('click', () => {
         if (operatorSign == '') {
             operatorSign = operator.value;
         } else {
-            operateByOperator = true;
             operate();
             operatorSign = operator.value;
         }
@@ -63,8 +66,7 @@ operators.forEach(operator => {
     })
 })
 
-
-
+let totalCalculated = false;
 /* Funciones */
 function operate() {
     let total = 0;
@@ -89,6 +91,7 @@ function operate() {
     }
 
     firstNumber = total;
+    totalCalculated = true;
 }
 
 function clearCalculator() {
