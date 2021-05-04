@@ -1,3 +1,8 @@
+body {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: bold;
+}
+
 :root {
     --Charcoal: #264653;
     --Persian-Green: #2A9D8F;
@@ -17,9 +22,14 @@ main {
     font-size: 1.3em;
 }
 
+.calculator__result {
+    font-size: 2em;
+    font-weight: bold;
+}
+
 .calculator__result, .calculator__operation {
     width: 100%;
-    padding: 1rem 1rem;
+    padding: 0 1rem;
     text-align: right;
     outline: 0;
     border: none;
@@ -27,6 +37,7 @@ main {
 }
 .calculator__operation {
     border-top: 1px solid #000;
+    color: rgb(63, 63, 63);
 }
 
 input[type="text"]::placeholder {

@@ -91,7 +91,8 @@ operators.forEach(operator => {
             operate();
             /* Y se almacena el nuevo simbolo introducido en la variable de operatorSign */
             operatorSign = operator.value;
-            operation.value = `${firstNumber} ${operatorSign}`;
+            if(isNaN(firstNumber)) operation.value = '';
+            else operation.value = `${firstNumber} ${operatorSign}`;
         }
         /* Se establece el booleano que indica si la operacion se realizo por medio del operador */
         operatorClick = true;
@@ -104,7 +105,7 @@ operators.forEach(operator => {
 let totalCalculated = false;
 /* Funciones */
 function operate() {
-    operation.value += ` ${result.value}`;
+    operation.value += ` ${result.value} =`;
     /* Se declara una variable para almacenar el total */
     let total = 0;
     /* Se evaluan casos para el simbolo de operacion */
