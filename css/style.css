@@ -17,12 +17,16 @@ main {
     font-size: 1.3em;
 }
 
-.calculator__result {
+.calculator__result, .calculator__operation {
     width: 100%;
     padding: 1rem 1rem;
     text-align: right;
-    border: 0;
     outline: 0;
+    border: none;
+    cursor: default;
+}
+.calculator__operation {
+    border-top: 1px solid #000;
 }
 
 input[type="text"]::placeholder {
@@ -41,6 +45,7 @@ input[type="text"]::placeholder {
     background-color: var(--Charcoal);
     color: white;
     transition: background-color 500ms;
+    cursor: pointer;
 }
 
 .calculator__button:hover {
@@ -80,5 +85,9 @@ input[type="text"]::placeholder {
         border-radius: 1rem;
         box-shadow: 0 0 20px var(--Burnt-Sienna);
         background: var(--Burnt-Sienna);
+    }
+
+    .calculator__operation {
+        border: none;
     }
 }
