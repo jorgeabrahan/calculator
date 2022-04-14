@@ -1,5 +1,3 @@
-Pagina web responsive de una calculadora que permite realizar las siguientes operaciones: suma, resta, multiplicacion y división.
+Responsive webpage of a calculator with all the basic mathematical (add, subtract, multiply, divide) operations.
 
-Permite realizar operaciones de manera consecutiva y muestra el procedimiento de la operación en la parte superior del resultado.
-
-Objetivos -> implementar el conocimiento sobre operadores y funciones en JavaScript. 
+The main goal of this website is to implement my knowledge using vanilla JS of the different operators and functions.
