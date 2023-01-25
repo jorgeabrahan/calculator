@@ -1,15 +1,7 @@
 body {
     font-family: 'Source Code Pro', monospace;
     font-weight: bold;
-}
-
-:root {
-    --Charcoal: #264653;
-    --Persian-Green: #2A9D8F;
-    --Orange-Yellow-Crayola: #E9C46A;
-    --Sandy-Brown: #F4A261;
-    --Burnt-Sienna: #E76F51;
-    --Chocolate-Web: #D2660F;
+    color-scheme: dark;
 }
 
 main {
@@ -21,61 +13,66 @@ main {
 }
 
 .calculator {
-    font-size: 1.3em;
-    max-width: 600px;
+    max-width: 450px;
     width: 100%;
-    border: 2px solid;
+    padding: 1.5rem;
+    background: #243441;
+    border-radius: 10px;
 }
 
 .calculator__result {
-    font-size: 2em;
+    font-size: 6rem;
     font-weight: bold;
+}
+
+.calculator__operation {
+    font-size: 1.2rem;
 }
 
 .calculator__result, .calculator__operation {
     width: 100%;
-    padding: 0 1rem;
     text-align: right;
     outline: 0;
     border: none;
+    background: none;
     cursor: default;
 }
-.calculator__operation {
-    color: rgb(63, 63, 63);
-}
 
-input[type="text"]::placeholder {
-    color: black;
+.calculator__lines, .calculator__line {
+    display: grid;
+    gap: 1.5rem;
 }
 
 .calculator__line {
-    display: flex;
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .calculator__button {
-    flex: 1;
-    padding: 1rem 0;
-    height: 5em;
+    font-size: 1.3rem;
     border: 0;
     outline: 0;
-    background-color: var(--Charcoal);
-    color: white;
-    transition: background-color 500ms;
+    padding: 1.2rem;
+    background-color: #233340;
     cursor: pointer;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
-.calculator__button:hover {
-    background-color: var(--Persian-Green);
+.calculator__button:active {
+    transform: scale(0.9);
 }
 
-.calculator__button:last-child {
-    background-color: var(--Sandy-Brown);
+.numbers, .calculator__operation {
+    color: #6e7c87;
 }
 
-.calculator__button:last-child:hover {
-    background-color: var(--Chocolate-Web);
+.operators, .clear {
+    font-weight: bold;
+    color: #bf7037;
 }
 
-.calculator__button:last-child:focus {
-    background-color: var(--Chocolate-Web);
+.equal {
+    font-weight: bold;
+    background-color: #bf7037;
+    color: white;
 }
