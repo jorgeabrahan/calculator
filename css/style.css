@@ -4,6 +4,12 @@ body {
     color-scheme: dark;
 }
 
+svg {
+    fill: white;
+    color: white;
+    background-color: white;
+}
+
 main {
     justify-content: center;
     min-height: 100vh;
